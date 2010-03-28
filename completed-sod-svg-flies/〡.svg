@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1000px"
+	 height="1000px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+<g id="Layer_1">
+	<path id="glyph" d="M457,77c25,0,48,3,69,9c25,7,37,16,37,26c0,4-1,11-4,21c-8,21-12,59-12,114l-2,428c0,58-3,105-10,141
+		c-5,47-12,80-21,99c-9,17-16,26-22,26c-3,0-7-9-13-27c-4-21-6-58-6-110V235c0-47-8-87-23-119c-6-10-9-16-9-19C441,84,446,77,457,77
+		z"/>
+</g>
+<g id="Layer_2">
+	<path id="glyph_1_" d="M457,77c25,0,48,3,69,9c25,7,37,16,37,26c0,4-1,11-4,21c-8,21-12,59-12,114l-2,428c0,58-3,105-10,141
+		c-5,47-12,80-21,99c-9,17-16,26-22,26c-3,0-7-9-13-27c-4-21-6-58-6-110V235c0-47-8-87-23-119c-6-10-9-16-9-19C441,84,446,77,457,77
+		z"/>
+	<circle id="Start_Mark" fill="#00FF00" cx="502.041" cy="122.069" r="31.395"/>
+	<polyline id="Arrow" fill="#FF0000" stroke="#FF0000" stroke-width="12" points="426.48,263.014 430.191,524.204 407.91,524.391 
+		430.764,566.061 450.771,523.923 430.191,524.204 	"/>
+	<text transform="matrix(1 0 0 1 358.2944 412.5508)" fill="#0000FF" font-family="'MyriadPro-Regular'" font-size="72">1</text>
+</g>
+</svg>
