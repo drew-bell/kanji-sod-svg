@@ -1,7 +1,0 @@
-#!/bin/bash
-svg2png base-character-images/$1.svg > /Library/WebServer/Documents/kanjisod.kicks-ass.net/kanji-images/png/$1.png
-svg2png -w 100 base-character-images/$1.svg > ~/Desktop/$1.png
-cp base-character-images/$1.svg /Library/WebServer/Documents/kanjisod.kicks-ass.net/kanji-images/svg/$1.svg
-git mv base-character-images/$1.svg completed-sod-svg-flies/$1.svg
-git add .
-git commit -m "$1 added"
