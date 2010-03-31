@@ -5,7 +5,7 @@ The repository consists of 2 directories
 	base-character-images : This directory contains all the glyphs from a chinese font extracted into individual svg files. Each file contains only 1 path. The files are 1000px by 1000px. Despite this large canvas size, the files themselves are less than 4K.
 	completed-sod-svg-files : this directory contains the completed stroke order images in svg format. Each image follow a strict yet simple format. The format is described in more detail below. 
 
-Scripts
+Scripts :
 	kdc - this short bash script is for removing the non-Japanese kanji from the repo.
 		- Just type ./kdc <kanji>
 		- It deletes the kanji from the base-character-images and commits the change with the comment "removed non-japanese kanji <kanji>"
