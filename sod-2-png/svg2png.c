@@ -54,7 +54,7 @@ cairo_status_t write_callback (void *closure, const unsigned char *data, unsigne
 		return CAIRO_STATUS_WRITE_ERROR;
 }
 
-svg_cairo_status_t write_surface_to_png_file (cairo_surface_t *surface, FILE *file)
+svg_cairo_status_t write_surface_to_out_file (cairo_surface_t *surface, FILE *file)
 {
     cairo_status_t status;
 	
@@ -66,7 +66,7 @@ svg_cairo_status_t write_surface_to_png_file (cairo_surface_t *surface, FILE *fi
 		return SVG_CAIRO_STATUS_SUCCESS;
 }
 
-svg_cairo_status_t render_to_png (FILE *svg_file, FILE *png_file, double scale, int width, int height)
+svg_cairo_status_t render_to_png (FILE *svg_file, FILE *out_file, double scale, int width, int height)
 {
     unsigned int svg_width, svg_height;
 	
@@ -120,7 +120,7 @@ svg_cairo_status_t render_to_png (FILE *svg_file, FILE *png_file, double scale, 
 	
     status = svg_cairo_render(svgc, cr);
 	
-    status = write_surface_to_png_file(surface, png_file);
+    status = write_surface_to_out_file(surface, out_file);
     cairo_surface_destroy(surface);
     cairo_destroy(cr);
     

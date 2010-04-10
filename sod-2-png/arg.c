@@ -17,9 +17,9 @@ void null_options(argo *opts) {
 	opts->height = -1;
 	opts->num_of_files = 0;
 	opts->svg_file = malloc(sizeof(char*));
-	opts->png_file = malloc(sizeof(char*));
+	opts->out_file = malloc(sizeof(char*));
 	opts->svg_file = NULL;
-	opts->png_file = NULL;
+	opts->out_file = NULL;
 }
 
 // check to see if the file already exists
@@ -46,7 +46,7 @@ void help(const char *argv0) {
 	char *argv0_copy = strdup (argv0);
     char *argv0_base = basename (argv0_copy);
 	
-	fprintf(stderr,"Usage: %s [OPTIONS] <SVG_file> <PNG_file>\n",argv0_base);
+	fprintf(stderr,"Usage: %s [OPTIONS] <SVG_file> <out_file>\n",argv0_base);
 	puts ("");
 	fprintf(stderr,"  -w, --width=WIDTH\tWidth of output image in pixels\n");
 	fprintf(stderr,"  -h, --height=HEIGHT\tHeight of output image in pixels\n");
@@ -119,7 +119,7 @@ void process_args(char **argv,int argc, argo *opts) {
     if (argc - optind >= 1) {
 		opts->svg_file = argv[optind++];
 		if (argc - optind >= 1) {
-			opts->png_file = argv[optind++];
+			opts->out_file = argv[optind++];
 			if (argc - optind > 0) {
 				help (argv[0]);
 				exit (1);
@@ -132,6 +132,6 @@ void process_args(char **argv,int argc, argo *opts) {
 	if (opts->width > 0) fprintf(stderr,"opts->width = %i\n",opts->width);
 	if (opts->height > 0) fprintf(stderr,"opts->height = %i\n",opts->height);
 	if (opts->svg_file != NULL) fprintf(stderr,"opts->svg_file = %s\n",opts->svg_file);
-	if (opts->png_file != NULL) printf("opts->png_file = %s\n",opts->png_file);
+	if (opts->out_file != NULL) printf("opts->out_file = %s\n",opts->out_file);
 
 }

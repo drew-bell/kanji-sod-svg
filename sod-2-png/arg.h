@@ -9,7 +9,7 @@ typedef struct options {
 	int height;
 	int num_of_files;
 	char *svg_file;
-	char *png_file;
+	char *out_file;
 } argo;
 
 void process_args(char **argv,int argc, argo *opts);

@@ -1,5 +1,4 @@
 #include <libxml/tree.h>
-#include <libxml/parser.h>
 #import "arg.h"
 
 /*  xml editing header file */
