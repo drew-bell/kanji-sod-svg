@@ -14,6 +14,6 @@
 	<circle id="Start_Mark" fill="#00FF00" cx="183.291" cy="512.569" r="31.395"/>
 	<polyline id="Arrow" fill="#FF0000" stroke="#FF0000" stroke-width="12" points="253.045,421.551 513.186,397.863 515.076,420.065 
 		554.875,394.089 511.33,377.366 513.186,397.863 	"/>
-	<text transform="matrix(1 0 0 1 382.0444 389.3013)" fill="#0000FF" font-family="'Helvitica'" font-size="72">1</text>
+	<text transform="matrix(1 0 0 1 382.0444 389.3013)" fill="#0000FF" font-family="'Helvetica'" font-size="72">1</text>
 </g>
 </svg>

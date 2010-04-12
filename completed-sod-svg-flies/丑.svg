@@ -20,7 +20,7 @@
 	<circle id="Start_Mark" fill="#00FF00" cx="449.045" cy="311.571" r="31.395"/>
 	<polyline id="Arrow" fill="#FF0000" stroke="#FF0000" stroke-width="7.2355" points="396.38,305.221 367.86,460.12 354.662,457.61 
 		363.277,484.94 380.064,462.374 367.86,460.12 	"/>
-	<text transform="matrix(1 0 0 1 333.7983 408.562)" fill="#0000FF" font-family="'Helvitica'" font-size="72">1</text>
+	<text transform="matrix(1 0 0 1 333.7983 408.562)" fill="#0000FF" font-family="'Helvetica'" font-size="72">1</text>
 </g>
 <g id="Layer_3">
 	<path id="Stroke" d="M668,735c7.082-43.419,26-220,26-220l5-41l15-125c3-30,13-52,29-67c13-10,19-17,19-21c0-16-17-34-50-54
@@ -29,7 +29,7 @@
 	<circle id="Start_Mark" fill="#00FF00" cx="315.69" cy="284.306" r="21.877"/>
 	<polyline id="Arrow" fill="none" stroke="#FF0000" stroke-width="12" points="553.185,164.184 803.664,144.779 754.584,401.343 
 		732.724,397.029 746.696,442.454 774.797,405.221 754.584,401.343 	"/>
-	<text transform="matrix(1 0 0 1 815.8027 203.8662)" fill="#0000FF" font-family="'Helvitica'" font-size="72">2</text>
+	<text transform="matrix(1 0 0 1 815.8027 203.8662)" fill="#0000FF" font-family="'Helvetica'" font-size="72">2</text>
 </g>
 <g id="Layer_4">
 	<path id="Stroke" d="M443,528c4-1,8-1,12-1c61-5,116-8,164-10l75-2h197c33,0,50-4,50-12c0-11-12-22-36-35c-29-11-45-16-50-16
@@ -38,7 +38,7 @@
 	<circle id="Start_Mark" fill="#00FF00" cx="138.497" cy="544.833" r="24.508"/>
 	<polyline id="Arrow" fill="#FF0000" stroke="#FF0000" stroke-width="12" points="65.491,608.85 323.636,568.903 
 		326.914,590.943 365.006,562.524 320.5,548.562 323.636,568.903 	"/>
-	<text transform="matrix(1 0 0 1 154.3989 661.7617)" fill="#0000FF" font-family="'Helvitica'" font-size="72">3</text>
+	<text transform="matrix(1 0 0 1 154.3989 661.7617)" fill="#0000FF" font-family="'Helvetica'" font-size="72">3</text>
 </g>
 <g id="Layer_5">
 	<path id="Stroke" d="M590,741c-13,1-24,1-34,2c-31,2-85,7-163,14l-52,5c-9,1-17,1-26,2c-60,7-108,11-144,11c-15,1-23,4-23,9
@@ -47,6 +47,6 @@
 	<circle id="Start_Mark" fill="#00FF00" cx="227.97" cy="800.973" r="29.771"/>
 	<polyline id="Arrow" fill="#FF0000" stroke="#FF0000" stroke-width="12" points="213.875,861.452 473.221,830.251 
 		475.753,852.39 514.785,825.274 470.774,809.815 473.221,830.251 	"/>
-	<text transform="matrix(1 0 0 1 314.0488 907.375)" fill="#0000FF" font-family="'Helvitica'" font-size="72">4</text>
+	<text transform="matrix(1 0 0 1 314.0488 907.375)" fill="#0000FF" font-family="'Helvetica'" font-size="72">4</text>
 </g>
 </svg>
