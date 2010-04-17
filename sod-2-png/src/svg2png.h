@@ -1,30 +1,3 @@
-sod2png
-
-Dependencies
-------------
-cairo library
-svg-cairo library
-libxml2 library
-
-Currently it has only been tested on OS X 10.6.3.
-
-This program takes one of the sag files from kanjisod.kicks-ass.net and alters it to desired style before outputting to the file to a png image.
-
-This is a beta release! Use at your own risk.
-
-To build the code if you have all the dependencies just run
-
-./make
-
-There is no install option yet.
-
-For information on usage, see the help output from the program
-./sod2png --help
-
-The code for the rendering to png was almost directly copied from svg2png. 
-
-Becasue of that, below is their Copyright notice
-
 /* svg2png - Render an SVG image to a PNG image (using cairo)
  *
  * Copyright © 2002 USC/Information Sciences Institute
@@ -53,3 +26,14 @@ Becasue of that, below is their Copyright notice
  * Author: Carl Worth <cworth@isi.edu>
  */
 
+/*
+ *
+ * The original has been modified to fit with this project.
+ *
+ */
+
+#include <svg-cairo.h>
+
+cairo_status_t write_callback (void *closure, const unsigned char *data, unsigned int length);
+svg_cairo_status_t write_surface_to_png_file (cairo_surface_t *surface, FILE *file);
+svg_cairo_status_t render_to_png (FILE *svg_file, FILE *png_file, double scale, int width, int height);
