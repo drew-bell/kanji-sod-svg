@@ -29,7 +29,11 @@ int main (int argc, char **argv) {
 	xmlDocPtr doc;
 
 	if (opts->svg_file == NULL) {
+
+		// Tell the user that the program quit due to lack of input file
 		fprintf(stderr,"No file to process.\n");
+
+		// Exit the program normally
 		exit(0);
 	} else {
 
@@ -37,11 +41,8 @@ int main (int argc, char **argv) {
 		doc = xmlParseFile(opts->svg_file);
 	}
 
-	// Get the root element node
-	root_element = xmlDocGetRootElement(doc);
-
-	// Pass the first node of the doc in memory for removal of unwanted parts
-	process_xml_options(root_element, opts);
+	// Pass the doc in memory for removal of unwanted parts
+	process_xml_options(doc, opts);
 
 	// If no output file has ben specified, dump the edited svg to stdout.
 	if (opts->out_file == NULL) {
@@ -61,6 +62,7 @@ int main (int argc, char **argv) {
 		xmlDocDump(output_format,doc);
 
 	} else {
+
 		// Pointer to function
 		svg_cairo_status_t (*render_functptr)(FILE*,FILE*,double,int,int) = NULL;
 		
@@ -72,7 +74,7 @@ int main (int argc, char **argv) {
 			FILE *output_format, *temp_file, *svg;
 			
 			// Create a tmp intermediary file
-			temp_file = fopen("tmpfile","w");
+			temp_file = fopen("/tmp/svg2png_tmpfile","w");
 			
 			// output the altered file
 			xmlDocDump(temp_file,doc);
@@ -84,7 +86,7 @@ int main (int argc, char **argv) {
 			output_format = fopen(opts->out_file,"w");
 			
 			// open the temp file for conversion to png
-			svg = fopen("tmpfile","r");
+			svg = fopen("/tmp/svg2png_tmpfile","r");
 			
 			// render the output file
 			render_functptr(svg, output_format, 1.0, opts->width, opts->height);
@@ -94,13 +96,12 @@ int main (int argc, char **argv) {
 			fclose(output_format);
 			
 			// delete the temp file
-			unlink("tmpfile");
+			unlink("/tmp/svg2png_tmpfile");
 		} else {
 
 			// Output error for the user
 			fprintf(stderr,"Unknown output file type : %s\n", ext(opts->out_file));
 		}
-
 	}
 
 	/* Clean up */
@@ -109,7 +110,6 @@ int main (int argc, char **argv) {
 	xmlFreeDoc(doc);
 
 	return (0);
-
 } // main
 
 

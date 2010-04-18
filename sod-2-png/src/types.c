@@ -25,6 +25,8 @@ int is_type(char *file,char *type) {
 } // is type
 
 char* ext(char *file) {
+	
+	// Return the extention of the file name
 	return strrchr(file,'.');
 }
 

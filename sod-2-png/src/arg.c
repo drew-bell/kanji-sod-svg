@@ -31,7 +31,7 @@ void help(const char *argv0) {
 	puts ("");
 	fprintf(stderr,"  -w, --width=WIDTH\tWidth of output image in pixels\n");
 	fprintf(stderr,"  -h, --height=HEIGHT\tHeight of output image in pixels\n");
-//	fprintf(stderr,"  -m, --sequence\tSequential image.\n");
+	fprintf(stderr,"  -m, --sequence\tSequential image.\n");
 	puts ("");
 	fprintf(stderr,"  -a, --no-arrows\tRemove arrows from the output image.\n");
 	fprintf(stderr,"  -n, --no-numbers\tRemove numbers from the output.\n");
@@ -56,7 +56,7 @@ void process_args(char **argv,int argc, argo *opts) {
 		{"no-startmark", no_argument, NULL, 's'},
 		{"width", required_argument, NULL, 'w'},
 		{"height", required_argument, NULL, 'h'},
-//		{"sequence", no_argument, NULL, 'm'},
+		{"sequence", no_argument, NULL, 'm'},
 		{"help", no_argument, NULL, '?'},
 		{NULL, 0, NULL, 0}
 	};
@@ -65,50 +65,57 @@ void process_args(char **argv,int argc, argo *opts) {
 	while ((c = getopt_long(argc, argv, "V?namsw:h:", long_options, NULL)) != -1)
 		switch (c) {
 			case 'w':
+			// Add the argument for the -w tag as an integer to the struct
 				opts->width = atoi(optarg);
 				break;
 			case 'h':
+			// Add the argument for the -h tag as an integer to the struct
 				opts->height = atoi(optarg);
 				break;
-	//		case 'm':
-	//			opts->sequential_images = true;
-	//			break;
+			case 'm':
+			// Output the strokes in individual images collectively
+				opts->sequential_images = true;
+				break;
 			case 'n':
+			// Set the remove numbers option
 				opts->no_numbers = true;
 				break;
 			case 's':
+			// Set the remove start mark option
 				opts->no_Start_mark = true;
 				break;
 			case 'a':
+			// Set the remove arrows option
 				opts->no_arrows = true;
 				break;
 			case 'V':
+			// Output the version of the program option
 				fprintf(stderr,"Version v%s\n",PROGRAM_VERSION);
 				exit(0);
 				break;
 			case '?':
+			// Output the help information
 				help(argv[0]);
 				exit(1);
 				break;
 			default:
-				fprintf(stderr,"Unknown option %d\n",c);
-				exit(1);
 				break;
 		}
-	
-	
+
+	// Add the input file to the args structure
     if (argc - optind >= 1) {
 		opts->svg_file = argv[optind++];
 		if (argc - optind >= 1) {
+			// Add the output file to the args structure
 			opts->out_file = argv[optind++];
 			if (argc - optind > 0) {
 				help (argv[0]);
 				exit (1);
     	    }
 		}
-		
     }
-	
+
+// Print some debug info
 	if (opts->sequential_images) fprintf(stderr,"opts->sequential_images\n");
 	if (opts->width > 0) fprintf(stderr,"opts->width = %i\n",opts->width);
 	if (opts->height > 0) fprintf(stderr,"opts->height = %i\n",opts->height);
