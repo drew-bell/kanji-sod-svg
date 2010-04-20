@@ -1,0 +1,5 @@
+
+	<circle id="Start_Mark" fill="#00FF00" cx="502.041" cy="122.069" r="31.395"/>
+	<polyline id="Arrow" fill="#FF0000" stroke="#FF0000" stroke-width="12" points="426.48,263.014 430.191,524.204 407.91,524.391 
+		430.764,566.061 450.771,523.923 430.191,524.204 	"/>
+	<text transform="matrix(1 0 0 1 358.2944 412.5508)" fill="#0000FF" font-family="'Helvetica'" font-size="72">1</text>
