@@ -7,11 +7,12 @@
 #include "editing.h"
 #include "svg2png.h"
 #include "types.h"
+#include <unistd.h>
 
 int main (int argc, char **argv) {
 
 	// A structure to hold all the cli arguments
-	argo *opts = malloc(sizeof(opts));
+	argo opts = (argo)malloc(sizeof(options));
 
 	// Null out all options before using
 	null_options(opts);
@@ -108,6 +109,9 @@ int main (int argc, char **argv) {
 	xmlCleanupParser();
 	xmlMemoryDump();
 	xmlFreeDoc(doc);
+	free(opts->svg_file);
+	free(opts->out_file);
+	free(opts);
 
 	return (0);
 } // main

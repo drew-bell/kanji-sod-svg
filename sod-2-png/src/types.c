@@ -3,6 +3,8 @@
 #include "svg2png.h"
 #include <stdbool.h>
 #include "types.h"
+#include <stdlib.h>
+#include <unistd.h>
 
 // determine if the file is of type *type (this should be a extention including the "." )
 int is_type(char *file,char *type) {
@@ -43,3 +45,11 @@ svg_cairo_status_t (*get_render_function(char *file))(FILE*,FILE*,double,int,int
 		return NULL;
 	}
 } // 
+
+// check to see if the file exists
+int file_exists(char *file) {
+	if (false == access(file,W_OK)) {
+		return true;
+	}
+	return false;
+}

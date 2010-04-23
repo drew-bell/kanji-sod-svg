@@ -4,10 +4,12 @@
 #include <string.h>
 #include <libgen.h>
 #include "arg.h"
-
+#include "types.h"
+#include <limits.h>
+//#define LENGTH _POSIX_PATH_MAX+1
 static const char PROGRAM_VERSION[] = "0.0.1";
 
-void null_options(argo *opts) {
+void null_options(argo opts) {
 	// Null out all the options
 	opts->no_arrows = false;
 	opts->no_numbers = false;
@@ -16,8 +18,6 @@ void null_options(argo *opts) {
 	opts->width = -1;
 	opts->height = -1;
 	opts->num_of_files = 0;
-	opts->svg_file = malloc(sizeof(char*));
-	opts->out_file = malloc(sizeof(char*));
 	opts->svg_file = NULL;
 	opts->out_file = NULL;
 }
@@ -42,7 +42,7 @@ void help(const char *argv0) {
 	free (argv0_copy);
 }
 
-void process_args(char **argv,int argc, argo *opts) {
+void process_args(char **argv,int argc, argo opts) {
 	
 	int c;
 	
@@ -103,23 +103,22 @@ void process_args(char **argv,int argc, argo *opts) {
 		}
 
 	// Add the input file to the args structure
-    if (argc - optind >= 1) {
-		opts->svg_file = argv[optind++];
-		if (argc - optind >= 1) {
-			// Add the output file to the args structure
-			opts->out_file = argv[optind++];
-			if (argc - optind > 0) {
-				help (argv[0]);
-				exit (1);
-    	    }
-		}
-    }
+	    if (argc - optind >= 1) {
+			opts->svg_file = (char*)malloc(FILENAME_MAX);
+			strncpy(opts->svg_file, argv[optind++],FILENAME_MAX);
+			if (argc - optind >= 1) {
+				// Add the output file to the args structure
+				opts->out_file = (char*)malloc(FILENAME_MAX);
+				strncpy(opts->out_file, argv[optind++],FILENAME_MAX);
+				if (argc - optind > 0) {
+					help (argv[0]);
+					exit (1);
+	    	    }
+			}
+	    }
 
-// Print some debug info
-	if (opts->sequential_images) fprintf(stderr,"opts->sequential_images\n");
-	if (opts->width > 0) fprintf(stderr,"opts->width = %i\n",opts->width);
-	if (opts->height > 0) fprintf(stderr,"opts->height = %i\n",opts->height);
-	if (opts->svg_file != NULL) fprintf(stderr,"opts->svg_file = %s\n",opts->svg_file);
-	if (opts->out_file != NULL) printf("opts->out_file = %s\n",opts->out_file);
+	if (!file_exists(opts->svg_file)) exit(0);
+
+
 
 }

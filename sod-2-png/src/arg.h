@@ -1,6 +1,6 @@
 #include <stdbool.h>
 
-typedef struct options {
+typedef struct {
 	bool no_arrows;
 	bool no_numbers;
 	bool no_Start_mark;
@@ -10,6 +10,9 @@ typedef struct options {
 	int num_of_files;
 	char *svg_file;
 	char *out_file;
-} argo;
+} options;
 
-void process_args(char **argv,int argc, argo *opts);
+typedef options *argo;
+
+void process_args(char **argv,int argc, argo opts);
+void null_options(argo opts);

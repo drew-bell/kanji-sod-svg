@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include "editing.h"
 #include "types.h"
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
 
 // Prototypes
 static void remove_part(xmlNode* a_node, char *node_type);
@@ -10,7 +14,7 @@ void remove_part(xmlNode* a_node, char *node_type) {
     xmlNode *cur_node = NULL;
 	for (cur_node = a_node; cur_node; cur_node = cur_node->next) {
         if (cur_node->type == XML_ELEMENT_NODE) {
-			if (!strcmp(cur_node->name,node_type)) {
+			if (!strcmp((char*)cur_node->name,node_type)) {
 				xmlUnlinkNode(cur_node);
 			}
 		}
@@ -31,7 +35,7 @@ void print_element_names(xmlNode* a_node) {
 }
 
 //void process_xml_options(xmlNode* node, argo *selected_opts) {
-void process_xml_options(xmlDocPtr doc, argo *selected_opts) {
+void process_xml_options(xmlDocPtr doc, argo selected_opts) {
 
 	// A pointer to the root element of the file
 	xmlNode *root_element = NULL;
@@ -93,7 +97,7 @@ void setup_basic_doc(xmlDocPtr ND) {
 }
 
 
-void create_sequential_images(xmlNode *OD_root_node, argo *opts) {
+void create_sequential_images(xmlNode *OD_root_node, argo opts) {
 
 	int number = 0;
 
@@ -144,7 +148,7 @@ void create_sequential_images(xmlNode *OD_root_node, argo *opts) {
     }
 }
 
-void push_out_image(xmlDocPtr ND, argo *opts, int number) {
+void push_out_image(xmlDocPtr ND, argo opts, int number) {
 
 	// Output file name
 	char filename[FILENAME_MAX];
@@ -191,10 +195,10 @@ void change_fill_colour(xmlNode *a_node, char *node_type) {
 	xmlNode *cur_node = NULL;
 	for (cur_node = a_node; cur_node; cur_node = cur_node->next) {
         if (cur_node->type == XML_ELEMENT_NODE) {
-			if (!strcmp(cur_node->name,node_type)) {
+			if (!strcmp((char*)cur_node->name,node_type)) {
 				
 				// remove any property called "fill"
-				xmlUnsetProp(cur_node, "fill");
+				xmlUnsetProp(cur_node,(unsigned char*)"fill");
 				
 				// set a fill colour for the node
 				xmlNewProp(cur_node, BAD_CAST "fill", BAD_CAST "#333333");
