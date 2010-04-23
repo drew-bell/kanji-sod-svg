@@ -12,15 +12,6 @@ This program takes one of the sag files from kanjisod.kicks-ass.net and alters i
 
 This is a beta release! Use at your own risk.
 
-To build the code if you have all the dependencies just run
-
-./make
-
-There is no install option yet.
-
-For information on usage, see the help output from the program
-./sod2png --help
-
 The code for the rendering to png was almost directly copied from svg2png. 
 
 Becasue of that, below is their Copyright notice
