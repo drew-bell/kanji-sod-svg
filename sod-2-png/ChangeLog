@@ -1,0 +1,10 @@
+<<<<<<< HEAD
+=======
+10/4/22
+Memory allocation fixed (arg.c, arg.h)
+Now builds on PPC and x86
+
+10/4/18
+Added sequenced output of images
+(editing.c)
+>>>>>>> c88e20d768a2a6a7dc32b89dec1ec9aedb1c62e6

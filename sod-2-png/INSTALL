@@ -1,5 +1,17 @@
+<<<<<<< HEAD
 If you have the prereq's installed, just type 
 
 make
 
 See the README for more information.
+=======
+To build the code if you have all the dependencies (see README) just run
+
+make
+
+There is no install option yet.
+
+For information on usage, see the help output from the program
+
+./sod2png --help
+>>>>>>> c88e20d768a2a6a7dc32b89dec1ec9aedb1c62e6
