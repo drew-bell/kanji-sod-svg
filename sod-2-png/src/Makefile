@@ -11,10 +11,10 @@ sod2png: $(srcdir)/main.o \
 	$(srcdir)/editing.o \
 	$(srcdir)/svg2png.o \
 	$(srcdir)/types.o
-	${CC} ${CCFLAGS} ${CFLAGS} ${LDFLAGS} --std=c99 -o ${PROGRAM_NAME} main.o arg.o editing.o svg2png.o types.o
+	${CC} ${CCFLAGS} ${CFLAGS} ${LDFLAGS} --std=c99 -ggdb -o ${PROGRAM_NAME} main.o arg.o editing.o svg2png.o types.o
 
 .c.o:
-	$(CC) $(CFLAGS) --std=c99 -c $< -o $@
+	$(CC) $(CFLAGS) --std=c99 -ggdb -c $< -o $@
 
 clean: 
 	rm -rf *.o sod2png

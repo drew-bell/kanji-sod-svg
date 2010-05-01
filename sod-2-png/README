@@ -8,7 +8,7 @@ libxml2 library
 
 Currently it has only been tested on OS X 10.6.3.
 
-This program takes one of the sag files from kanjisod.kicks-ass.net and alters it to desired style before outputting to the file to a png image.
+This program takes one of the sod files from kanjisod.kicks-ass.net and alters it to desired style before outputting to the file to a png image.
 
 This is a beta release! Use at your own risk.
 
